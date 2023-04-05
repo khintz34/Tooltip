@@ -1,4 +1,12 @@
 #mainContainer {
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainTip {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
@@ -109,4 +117,67 @@
   left: 50%;
   margin-left: -7px;
   border-color: transparent transparent black transparent;
+}
+
+@media (max-width: 501px) {
+  #mainContainer {
+    display: block;
+    margin-left: 10vw;
+    width: 100vw;
+  }
+
+  #mainTip {
+    /* column-gap: 5vw; */
+  }
+  .tipContainer {
+    height: 10vh;
+    width: 40vw;
+  }
+
+  .flexRight {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .flexLeft {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .tooltip {
+    width: auto;
+  }
+
+  .tooltip .tooltipText {
+    width: 20vw;
+  }
+
+  .pRight .tooltipText {
+    top: -5px;
+    left: 150%;
+  }
+  .pLeft .tooltipText {
+    top: -5px;
+    right: 150%;
+  }
+
+  .pTopRight .tooltipText {
+    bottom: 150%;
+    left: -100%;
+  }
+
+  .pTopLeft .tooltipText {
+    bottom: 150%;
+    right: -100%;
+  }
+
+  .pBotRight .tooltipText {
+    top: 100%;
+    left: -30%;
+  }
+
+  .pBotLeft .tooltipText {
+    top: 100%;
+    right: -30%;
+  }
 }
