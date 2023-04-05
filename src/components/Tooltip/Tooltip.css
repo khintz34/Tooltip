@@ -2,24 +2,30 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  column-gap: 2vw;
+}
+
+.tipContainer {
+  height: 8vh;
+  width: 25vw;
+}
+
+.flexRight {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flexLeft {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .tooltip {
-  height: 7vh;
-  width: 20vw;
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
-}
-
-.aLeft {
-  text-align: left;
-  padding-left: 2vw;
-}
-
-.aRight {
-  text-align: right;
-  padding-right: 2vw;
+  width: 5vw;
+  text-align: center;
 }
 
 .tooltip .tooltipText {
@@ -36,83 +42,71 @@
 
 .tooltip:hover .tooltipText {
   visibility: visible;
+  cursor: help;
 }
 
 .pRight .tooltipText {
   top: -5px;
-  left: 70%;
+  left: 110%;
 }
 .pLeft .tooltipText {
   top: -5px;
-  right: 70%;
+  right: 110%;
 }
 
 .pTopRight .tooltipText {
-  bottom: 120%;
-  left: -10%;
-  /* margin-left: 5vw; */
+  bottom: 150%;
+  left: -50%;
 }
 
 .pTopLeft .tooltipText {
-  bottom: 120%;
-  right: -10%;
-  /* margin-left: 5vw; */
+  bottom: 150%;
+  right: -50%;
 }
 
 .pBotRight .tooltipText {
-  top: 90%;
-  left: -5%;
-  /* margin-left: 5vw; */
+  top: 150%;
+  left: -50%;
 }
 
 .pBotLeft .tooltipText {
-  top: 90%;
-  right: -5%;
-  /* margin-left: 5vw; */
+  top: 150%;
+  right: -50%;
+}
+
+.tooltipText::after {
+  content: " ";
+  position: absolute;
+  border-width: 7px;
+  border-style: solid;
 }
 
 .pTopRight .tooltipText::after,
 .pTopLeft .tooltipText::after {
-  content: " ";
-  position: absolute;
-  top: 100%; /* At the bottom of the tooltip */
+  top: 100%;
   left: 50%;
   margin-left: -7px;
-  border-width: 7px;
-  border-style: solid;
   border-color: black transparent transparent transparent;
 }
 
 .pRight .tooltipText::after {
-  content: " ";
-  position: absolute;
   top: 50%;
-  right: 100%; /* To the left of the tooltip */
+  right: 100%;
   margin-top: -7px;
-  border-width: 7px;
-  border-style: solid;
   border-color: transparent black transparent transparent;
 }
 
 .pLeft .tooltipText::after {
-  content: " ";
-  position: absolute;
   top: 50%;
-  left: 100%; /* To the right of the tooltip */
+  left: 100%;
   margin-top: -7px;
-  border-width: 7px;
-  border-style: solid;
   border-color: transparent transparent transparent black;
 }
 
 .pBotRight .tooltipText::after,
 .pBotLeft .tooltipText::after {
-  content: "";
-  position: absolute;
   bottom: 100%;
   left: 50%;
   margin-left: -7px;
-  border-width: 7px;
-  border-style: solid;
   border-color: transparent transparent black transparent;
 }
