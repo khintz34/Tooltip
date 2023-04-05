@@ -2,7 +2,7 @@
   "name": "tooltip",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://khintz34.github.io/Tooltip/",
+  "homepage": "https://khintz34.github.io/tooltip/",
   "type": "module",
   "scripts": {
     "dev": "vite",
